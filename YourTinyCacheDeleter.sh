@@ -19,9 +19,5 @@ rm -rf /Library/Caches/* 2> /dev/null; # 2> /dev/null is used to avoid errors
 echo "INFO: All caches were deleted."
 sleep 1
 
-# Ask user to reboot the Mac
-echo "INFO: Do you want to reboot the Mac now? (y/n)"
-read answer
-if [ "$answer" == "y" ]; then
-    sudo reboot
-fi
+# Applescript to exit the terminal:
+osascript -e 'tell application "iTerm" to quit'
